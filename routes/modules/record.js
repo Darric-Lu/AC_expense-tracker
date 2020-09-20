@@ -33,7 +33,7 @@ router.get('/:id/edit', (req, res) => {
     .lean()
     .then(record => {
       const selectedCategory = record.category
-      console.log(selectedCategory)
+      // console.log(selectedCategory)
       category.find()
         .lean()
         .sort({ _id: 'asc' })

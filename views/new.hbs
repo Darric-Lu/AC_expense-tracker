@@ -34,7 +34,49 @@
       <textarea type="text" id="description" name="description" class="col-12 col-md-4" rows="3"></textarea>
     </div>
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-info">Submit</button>
+      {{!-- <button type="submit" class="btn btn-info">Submit</button> --}}
+      <button class="btn btn-info create-btn" data-toggle="modal" type="button"
+        data-target="#exampleModal">Submit</button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title m-2">確認新增:</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="submit" class="btn btn-info">Submit</button>
+          </div>
+        </div>
+      </div>
     </div>
   </form>
 </div>
+
+<script>
+  const createBtn = document.querySelector('.create-btn')
+
+  function createPrompt(e) {
+    const name = document.querySelector('#name').value
+    const date = document.querySelector('#date').value
+    const amount = document.querySelector('#amount').value
+    const category = document.querySelector('#category').value
+    const categoryArry = category.split(',')
+    const description = document.querySelector('#description').value
+    document.querySelector('.modal-body').innerHTML = `
+  <p>*名稱 : <span>${name}</span></p> 
+  <p>*日期 : <span>${date}</span></p> 
+  <p>*金額 : <span>${amount}</span></p> 
+  <p>*類型 : <span>${categoryArry[0]}</span></p> 
+  <p>備註 : <span>${description}</span></p> 
+  `
+  }
+
+  createBtn.addEventListener('click', createPrompt)
+</script>
