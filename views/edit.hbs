@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-3 text-right">
+    <p>*必填欄位</p>
+  </div>
+  <div class="col-6 text-center">
+    <h4>修改支出</h4>
+  </div>
+</div>
+<div class="row mt-2">
+  <form method="POST" action="/record/{{record._id}}/?_method=PUT" class="col-12">
+    <div class="form-group">
+      <label class="text-md-right col-12 col-md-4" for="name">*名稱 : </label>
+      <input class="col-12 col-md-4" type="text" id="name" name="name" value="{{record.name}}" required>
+    </div>
+    <div class="form-group">
+      <label class="text-md-right col-12 col-md-4" for="date">*日期 : </label>
+      <input class="col-12 col-md-4" type="date" id="date" name="date" value="{{record.date}}" required>
+    </div>
+    <div class="form-group">
+      <label class="text-md-right col-12 col-md-4" for="amount" min="1">*金額 : </label>
+      <input class="col-12 col-md-4" type="number" id="amount" name="amount" min="1" tep="1" value="{{record.amount}}"
+        required>
+    </div>
+    <div class="form-group">
+      <label class="text-md-right col-12 col-md-4" for="category"> *類型 : </label>
+      <select class="custom-select col-12 col-md-4" id="category" name="category">
+        <option value="{{record.category}},{{record.icon}}" selected> {{record.category}} </option>
+        {{#each category}}
+        <option value="{{this.name}},{{this.icon}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-group d-flex align-items-start">
+      <label class="text-md-right text-md-top col-12 col-md-4" for="description" min="1">備註 : </label>
+      <textarea type="text" id="description" name="description" class="col-12 col-md-4 ml-1" rows="3"
+        placeholder="{{record.description}}"></textarea>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-info">Submit</button>
+    </div>
+  </form>
+</div>

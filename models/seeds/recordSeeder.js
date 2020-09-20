@@ -37,14 +37,14 @@ db.once('open', () => {
   }, {
     name: '電風扇',
     date: '2020-09-15',
-    category: '家居物業 ',
+    category: '家居物業',
     amount: '1200',
     description: 'Panasonic',
     icon: 'fas fa-home',
   }, {
     name: 'ALPHA camp',
     date: '2020-09-15',
-    category: '家居物業 ',
+    category: '其他',
     amount: '12000',
     description: '2-3',
     icon: 'fas fa-pen',
