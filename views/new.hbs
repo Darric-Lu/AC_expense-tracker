@@ -1,0 +1,57 @@
+<p>新增一筆</p>
+
+<form action="">
+  <div class="form-group">
+    <label for="name">Email address</label>
+    <input type="email" class="form-control" id="_name" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Example multiple select</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</form>
+<div class="row">
+  <div class="col-4">
+    <p>*必填欄位</p>
+  </div>
+  <div class="col-8">
+    <h4>請輸入你的支出</h4>
+  </div>
+</div>
+<div class="row">
+  <form method="GET" action="/create" class="col-12">
+    <div class="form-group">
+      <label class="text-md-right col-12 col-md-4" for="name">*名稱 : </label>
+      <input class="col-12 col-md-4" type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label class="text-md-right col-12 col-md-4" for="date">*日期 : </label>
+      <input class="col-12 col-md-4" type="date" id="date" name="date" required>
+    </div>
+    <div class="form-group">
+      <label class="text-md-right col-12 col-md-4" for="amount" min="1">*金額 : </label>
+      <input class="col-12 col-md-4" type="number" id="amount" name="amount" min="1" tep="1" required>
+    </div>
+    <button type="submit" class="btn btn-info">Submit</button>
+  </form>
+</div>
