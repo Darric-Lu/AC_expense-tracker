@@ -25,7 +25,9 @@
   <li class="list-group-item">
     <div class="row justify-content-between ">
       <div class="col-1 align-self-center">
-        <i class="{{this.icon}} fa-2x ml-3 align-self-center"></i>
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{this.description}}">
+          <i class="{{this.icon}} fa-2x ml-3 align-self-center" :hover></i>
+        </span>
       </div>
       <div class="col-11 row justify-content-between">
         <div class="col-4 align-self-center">

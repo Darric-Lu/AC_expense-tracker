@@ -25,7 +25,7 @@ db.once('open', () => {
     date: '2020-08-25',
     category: '交通出行',
     amount: '18',
-    description: '',
+    description: '好晃',
     icon: 'fas fa-shuttle-van',
   }, {
     name: '電影',

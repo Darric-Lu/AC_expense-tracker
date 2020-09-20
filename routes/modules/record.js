@@ -13,8 +13,9 @@ router.get('/create', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const { name, date, amount, category, description } = req.body
+  let { name, date, amount, category, description } = req.body
   let categoryArry = category.split(',')
+  if (!description.trim()) description = "沒有備註"
   record.create({
     name,
     date,
@@ -52,8 +53,9 @@ router.put('/:id', (req, res) => {
   const id = req.params.id
   record.findById(id)
     .then(record => {
-      const { name, date, amount, category, description } = req.body
+      let { name, date, amount, category, description } = req.body
       let categoryArry = category.split(',')
+      if (!description.trim()) description = "沒有備註"
       const data = {
         name,
         date,
