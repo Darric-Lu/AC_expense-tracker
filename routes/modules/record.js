@@ -47,6 +47,7 @@ router.get('/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 
 })
+
 router.put('/:id', (req, res) => {
   const id = req.params.id
   record.findById(id)
@@ -66,4 +67,13 @@ router.put('/:id', (req, res) => {
     })
     .then(() => res.redirect('/'))
 })
+
+router.delete('/:id', (req, res) => {
+  const id = req.params.id
+  record.findById(id)
+    .then(record => record.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.error(error))
+})
+
 module.exports = router
