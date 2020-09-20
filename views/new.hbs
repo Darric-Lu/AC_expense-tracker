@@ -1,45 +1,13 @@
-<p>新增一筆</p>
-
-<form action="">
-  <div class="form-group">
-    <label for="name">Email address</label>
-    <input type="email" class="form-control" id="_name" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-</form>
 <div class="row">
-  <div class="col-4">
+  <div class="col-3 text-right">
     <p>*必填欄位</p>
   </div>
-  <div class="col-8">
-    <h4>請輸入你的支出</h4>
+  <div class="col-6 text-center">
+    <h4>請輸入你的新增支出</h4>
   </div>
 </div>
-<div class="row">
-  <form method="GET" action="/create" class="col-12">
+<div class="row mt-2">
+  <form method="POST" action="/record" class="col-12">
     <div class="form-group">
       <label class="text-md-right col-12 col-md-4" for="name">*名稱 : </label>
       <input class="col-12 col-md-4" type="text" id="name" name="name" required>
@@ -52,6 +20,21 @@
       <label class="text-md-right col-12 col-md-4" for="amount" min="1">*金額 : </label>
       <input class="col-12 col-md-4" type="number" id="amount" name="amount" min="1" tep="1" required>
     </div>
-    <button type="submit" class="btn btn-info">Submit</button>
+    <div class="form-group">
+      <label class="text-md-right col-12 col-md-4" for="category"> *類型 : </label>
+      <select class="custom-select col-12 col-md-4" id="category" name="category">
+        <option selected disabled> 請選擇類別 </option>
+        {{#each category}}
+        <option value="{{this.name}},{{this.icon}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-group d-flex align-items-start">
+      <label class="text-md-right text-md-top col-12 col-md-4" for="description" min="1">備註 : </label>
+      <textarea type="text" id="description" name="description" class="col-12 col-md-4" rows="3"></textarea>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-info">Submit</button>
+    </div>
   </form>
 </div>
